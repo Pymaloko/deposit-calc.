@@ -22,5 +22,18 @@ int check;
         if (check == 1) {
             printf("Неверно введены данные, введите заново:\n");
         };
-    }    
+    }while (check);
+    if (srok < 31) {
+        sum-=sum/10;
+    };
+    if ((srok >= 31) && (srok < 121)) {
+        sum+=sum/50;
+    };
+    if ((srok >= 121) && (srok <241)) {
+        sum+=(sum/100)*6;
+    };
+    if (srok >= 241) {
+        sum+=(sum/100)*12;
+    };
+    printf("Сумма вклада на момент окончания срока: \n%0f\n ", sum);    
 }
