@@ -24,16 +24,36 @@ int check;
         };
     }while (check);
     if (srok < 31) {
-        sum-=sum/10;
+        if (sum <= 100000) {
+            sum-=sum/10;
+        }
+        else 
+            { sum-=sum/10;
+        }
     };
     if ((srok >= 31) && (srok < 121)) {
-        sum+=sum/50;
+        if (sum <= 100000) {
+            sum+=sum/50;
+        }
+        else { 
+            sum+=(sum/100)*3; 
+        }
     };
     if ((srok >= 121) && (srok <241)) {
-        sum+=(sum/100)*6;
+        if (sum <=100000) {
+            sum+=(sum/100)*6;
+        }
+        else { 
+            sum+=(sum/100)*8; 
+        }
     };
     if (srok >= 241) {
-        sum+=(sum/100)*12;
+        if (sum <= 100000) {
+            sum+=(sum/100)*12;
+        }
+        else { 
+            sum+=(sum/100)*15; 
+        }
     };
     printf("Сумма вклада на момент окончания срока: \n%0f\n ", sum);    
 }
